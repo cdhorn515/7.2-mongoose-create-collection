@@ -24,20 +24,19 @@ mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://localhost:27017/cdccollection');
 
 app.get('/', pigController.indexLanding);
-app.post('/', pigController.indexList);
+app.post('/pig/list', pigController.indexList);
 
-// Pig.findOneAndUpdate({name: 'watering can'},[{ownerName: 'Christina', howLongOwned: 6}, {ownerName: 'Peter', howLongOwned: 2}]).then(function(error, result){
-//   //can save results in context obj and send to mustache file
-//   console.log(result);
-// });
+// added information to database
+/*
+var pig = new Pig({name: 'watering can', size: 'large', color: 'copper', owners: [{ownerName: 'Christina', howLongOwned: 6}, {ownerName: 'Peter', howLongOwned: 2}], attributes: ['metal', 'shiny'], howMany: 1});
+
+pig.save();
+
+var pig = new Pig({name: 'car mascot', size: 'small', color: 'pink', attributes: ['squishy', 'soft'], howMany: 1});
+
+pig.save();
+*/
+
 app.listen(3000, function(){
   console.log('app started');
 });
-
-//added information to database
-// var pig = new Pig({name: 'watering can', size: 'large', color: 'copper', owners: [{name: 'Christina', howLongOwned: 6}, {name: 'Peter', howLongOwned: 2}], attributes: ['metal', 'shiny'], howMany: 1});
-//
-//
-// pig.save();
-//
-// console.log(pig.toObject());

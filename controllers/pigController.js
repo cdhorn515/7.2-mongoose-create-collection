@@ -11,7 +11,6 @@ module.exports = {
   indexList: function (req, res) {
     console.log('hi');
 
-      Pig.create({name: req.body.name});
       var pig = new Pig({name: req.body.name, size: req.body.size, color: req.body.color, owners: [{ownerName: req.body.owner, howLongOwned: req.body.yearsOwned}, {ownerName: req.body.owner, howLongOwned: req.body.yearsOwned}], attributes: [req.body.attributes], howMany: req.body.howMany});
       pig.save().then(function(){
         console.log('saving new pig');
