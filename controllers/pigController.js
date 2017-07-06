@@ -38,11 +38,33 @@ module.exports = {
       console.log('finding pig');
       if (req.body.name) {
          result.name = req.body.name;
-         result.save();
-
+          }
+     if (req.body.howMany) {
+       result.howMany = req.body.howMany;
+        }
+      if (req.body.size) {
+       result.size = req.body.size;
+        }
+     if (req.body.attributes) {
+       result.attributes.push(req.body.attributes);
+        }
+     if (req.body.color) {
+       result.color = req.body.color;
+        }
+      if(req.body.owner) {
+        var owner = {ownerName: req.body.owner};
+        result.owners.push(owner);
       }
+    //  if (req.body.ownerName || req.body.yearsOwned) {
+    //    var ownerOwned = {ownerName: req.body.ownerName, howLongOwned: req.body.yearsOwned};
+    //    result.owners.push(ownerOwned);
+        // }
+      if(req.body.yearsOwned) {
+        var yearsOwned = {howLongOwned: req.body.yearsOwned};
+        result.owners.push(yearsOwned);
+}
+         result.save();
         res.redirect('/');
-
       });
       // Recipe.findOne({name: 'Salad'}).then(function(result){
       //   //can save results in context obj and send to mustache file
@@ -51,6 +73,11 @@ module.exports = {
       //   result.ingredients.push(ingredient);
       //   result.save();
       // });
+    },
+    deletePig: function(req, res) {
+      console.log('deleting');
+      Pig.deleteOne({_id: req.params.id}).then(function(){
+        res.redirect('/');
+      });
     }
-
   };
