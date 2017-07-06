@@ -26,6 +26,9 @@ mongoose.connect('mongodb://localhost:27017/cdccollection');
 app.get('/', pigController.indexLanding);
 app.post('/pig/list', pigController.indexList);
 
+app.get('/pig/editpig/:id', pigController.landing);
+app.post('/pig/editpig/:id', pigController.edit);
+
 // added information to database
 /*
 var pig = new Pig({name: 'watering can', size: 'large', color: 'copper', owners: [{ownerName: 'Christina', howLongOwned: 6}, {ownerName: 'Peter', howLongOwned: 2}], attributes: ['metal', 'shiny'], howMany: 1});

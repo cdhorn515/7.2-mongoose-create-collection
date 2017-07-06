@@ -11,38 +11,39 @@
   <h2>Share your pigs with us!</h2>
 
   <form class="addPig" action="/pig/list" method="post">
-    </div>
-    <div>
-      <label for="name">Name of Pig item</label>
-      <input type="text" name="name" value="">
-    </div>
-    <div>
-      <label for="number">How many do you have?</label>
-      <input type="tel" name="howMany" value="">
-    </div>
-    <div>
-      <label for="size">How big?</label>
-      <input type="text" name="size" value="">
-    </div>
-    <div>
-      <label for="attributes">Attributes</label>
-      <input type="text" name="attributes" value="">
-    </div>
-    <div>
-      <label for="color">Color</label>
-      <input type="text" name="color" value="">
-    </div>
-    <div>
-      <label for="owner">Owned by</label>
-      <input type="text" name="owner" value="">
-    </div>
-    <div>
-      <label for="yearsOwned">Years owned</label>
-      <input type="tel" name="yearsOwned" value="">
-    </div>
-    <div>
-      <input type="submit" name="updatePig" value="Submit">
-  </form>
+
+      <div>
+        <label for="name">Name of Pig item</label>
+        <input type="text" name="name" value="">
+      </div>
+      <div>
+        <label for="number">How many do you have?</label>
+        <input type="tel" name="howMany" value="">
+      </div>
+      <div>
+        <label for="size">How big?</label>
+        <input type="text" name="size" value="">
+      </div>
+      <div>
+        <label for="attributes">Attributes</label>
+        <input type="text" name="attributes" value="">
+      </div>
+      <div>
+        <label for="color">Color</label>
+        <input type="text" name="color" value="">
+      </div>
+      <div>
+        <label for="owner">Owned by</label>
+        <input type="text" name="owner" value="">
+      </div>
+      <div>
+        <label for="yearsOwned">Years owned</label>
+        <input type="tel" name="yearsOwned" value="">
+      </div>
+      <div>
+        <input type="submit" name="" value="Add to the list">
+      </div>
+      </form>
 
   {{#model}}
     <h2>That's Some Pig:</h3>
@@ -72,6 +73,9 @@
         </ul>
         {{/owners}}
       </div>
+      <form class="update" action="/pig/editpig/{{_id}}" method="get">
+        <input type="submit" name="" value="Edit">
+      </form>
     {{/model}}
   </body>
 </html>

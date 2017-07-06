@@ -5,8 +5,41 @@
     <title>Edit Pig</title>
   </head>
   <body>
-    <form class="" action="index.html" method="post">
+    {{#model}}
+    <form class="" action="/pig/editpig/{{_id}}" method="post">
 
+
+        <div>
+          <label for="name">Name of Pig item</label>
+          <input type="text" name="name" value="{{_id}}">
+        </div>
+        <div>
+          <label for="number">How many do you have?</label>
+          <input type="tel" name="howMany" value="{{howMany}}">
+        </div>
+        <div>
+          <label for="size">How big?</label>
+          <input type="text" name="size" value="{{size}}">
+        </div>
+        <div>
+          <label for="attributes">Attributes</label>
+          <input type="text" name="attributes" value="{{attributes}}">
+        </div>
+        <div>
+          <label for="color">Color</label>
+          <input type="text" name="color" value="{{color}}">
+        </div>
+        <div>
+          <label for="owner">Owned by</label>
+          <input type="text" name="owner" value="ownerName">
+        </div>
+        <div>
+          <label for="yearsOwned">Years owned</label>
+          <input type="tel" name="yearsOwned" value="{{yearsOwned}}">
+        </div>
+        {{/model}}
+        <div>
+          <input type="submit" name="updatePig" value="Submit">
     </form>
   </body>
 </html>
