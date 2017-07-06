@@ -17,8 +17,7 @@ var pigSchema = new mongoose.Schema({
     required: true,
     default: 1}
 });
-
+//collection name in mongodb is Pig
 var Pig = mongoose.model('Pig', pigSchema);
 
 module.exports = Pig;
-// storing nested obj as field in SO
