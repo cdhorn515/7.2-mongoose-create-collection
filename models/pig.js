@@ -5,17 +5,15 @@ var pigSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  size: String,
-  attributes: [String],
-  color: String,
-  owners: [{
-    ownerName: String,
-    howLongOwned: Number
-  }],
   howMany: {
     type: Number,
     required: true,
-    default: 1}
+    default: 1},
+  attributes: [String],
+  owners: [{
+    ownerName: String,
+    location: String
+  }]
 });
 //collection name in mongodb is Pig
 var Pig = mongoose.model('Pig', pigSchema);

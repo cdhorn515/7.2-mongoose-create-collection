@@ -8,7 +8,6 @@
     {{#model}}
     <form class="" action="/pig/editpig/{{_id}}" method="post">
 
-
         <div>
           <label for="name">Name of Pig item</label>
           <input type="text" name="name" value="{{name}}">
@@ -18,24 +17,16 @@
           <input type="tel" name="howMany" value="{{howMany}}">
         </div>
         <div>
-          <label for="size">How big?</label>
-          <input type="text" name="size" value="{{size}}">
-        </div>
-        <div>
           <label for="attributes">Attributes</label>
-          <input type="text" name="attributes" value="{{attributes}}">
-        </div>
-        <div>
-          <label for="color">Color</label>
-          <input type="text" name="color" value="{{color}}">
+          <input type="text" name="attributes" value="">
         </div>
         <div>
           <label for="owner">Owned by</label>
-          <input type="text" name="owner" value="{{ownerName}}">
+          <input type="text" name="owner" value="">
         </div>
         <div>
-          <label for="yearsOwned">Years owned</label>
-          <input type="tel" name="yearsOwned" value="{{yearsOwned}}">
+          <label for="location">Location(state)</label>
+          <input type="text" name="location" value="">
         </div>
         {{/model}}
         <div>

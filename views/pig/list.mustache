@@ -21,26 +21,6 @@
       <input type="tel" name="howMany" value="">
     </div>
     <div>
-      <label for="size">How big?</label>
-      <input type="text" name="size" value="">
-    </div>
-    <div>
-      <label for="attributes">Attributes</label>
-      <input type="text" name="attributes" value="">
-    </div>
-    <div>
-      <label for="color">Color</label>
-      <input type="text" name="color" value="">
-    </div>
-    <div>
-      <label for="owner">Owned by</label>
-      <input type="text" name="owner" value="">
-    </div>
-    <div>
-      <label for="yearsOwned">Years owned</label>
-      <input type="tel" name="yearsOwned" value="">
-    </div>
-    <div>
       <input type="submit" name="" value="Add to the list">
     </div>
   </form>
@@ -48,40 +28,33 @@
   {{#model}}
     <form class="update" action="/pig/editpig/{{_id}}" method="get">
       <h2>That's Some Pig:</h3>
-      <div class="">
-        Name: {{name}}, How Many: {{howMany}}
+      <div>
+        Name: {{name}}
+      </div>
+        <div>
+         Number owned: {{howMany}}
       </div>
       <div>
-        Size: {{size}}
+        Characteristics:
+        {{#attributes}}
+       <ul>
+         <li>{{.}}</li>
+       </ul>
+        {{/attributes}}
       </div>
-      <div>
-        Attributes: <ul>
 
-          {{#attributes}}
-          <li>{{.}}</li>
-          {{/attributes}}
-        </ul>
-      </div>
-      <div>
-        Color: {{color}}
-      </div>
-      <div>
-        {{#owners}}
-        {{#ownerName}}
-        Owned by: <ul>
-          <li>{{ownerName}}
-            {{/ownerName}}
-          </li>
+     <div>
+   Owner(s):
+     {{#owners}}
 
-            {{#howLongOwned}}
-            <li>
-            Years owned: {{howLongOwned}}
-          </li>
-            {{/howLongOwned}}
-        </ul>
-        {{/owners}}
+<ul>
+  <li>{{ownerName}} from {{location}}</li>
+</ul>
 
-      </div>
+
+     {{/owners}}
+   </div>
+
       <input type="submit" name="" value="Edit">
 </form>
 <form class="update" action="/pig/deletepig/{{_id}}" method="post">

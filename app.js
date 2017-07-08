@@ -32,15 +32,15 @@ app.post('/pig/editpig/:id', pigController.edit);
 app.post('/pig/deletepig/:id', pigController.deletePig);
 
 // added information to database
-/*
-var pig = new Pig({name: 'watering can', size: 'large', color: 'copper', owners: [{ownerName: 'Christina', howLongOwned: 6}, {ownerName: 'Peter', howLongOwned: 2}], attributes: ['metal', 'shiny'], howMany: 1});
+//
+// var pig = new Pig({name: 'watering can', howMany: 1, owners: [{ownerName: 'Christina', location: "SC"}, {ownerName: 'Peter', location: "WA"}], attributes: ['metal', 'shiny']});
+//
+// pig.save();
+//
+// var pig = new Pig({name: 'car mascot', attributes: ['squishy', 'soft']});
+//
+// pig.save();
 
-pig.save();
-
-var pig = new Pig({name: 'car mascot', size: 'small', color: 'pink', attributes: ['squishy', 'soft'], howMany: 1});
-
-pig.save();
-*/
 
 app.listen(3000, function(){
   console.log('app started');
